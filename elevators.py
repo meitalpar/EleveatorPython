@@ -1,6 +1,7 @@
 class elevator:
     Time = 0
-    flag = 0 ;
+    flag = 0
+    destination = 0
     #UP = 1
     #DOWN = -1
 
@@ -17,6 +18,6 @@ class elevator:
 
 
     def time(self,src,des):
-        df=des-src
+        df=abs(des-src)
        # print(df)
         return (self.closetime + self.starttime + df/self.speed + self.stoptime + self.opentime)
