@@ -50,12 +50,13 @@ def well (b:building,src:int,des:int):
         if ( (timei+i.Time)<timem ):
             iii=index
             ans = i
-            timem = timei+i.Time
-                    #+i.time(last,src)
+            timem = timei+i.Time+i.time(i.destination,src)
         index=index+1
     if(ans!=0):
-        ans.Time=(ans.Time+timem)
+        ans.Time=(ans.Time+timem+i.time(i.destination,src))
+        ans.destination = des
     print('iii',iii)
+
     return iii
 
 
