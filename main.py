@@ -1,13 +1,17 @@
 import os
+import sys
 
 from building import Building
 from Elevators import Elevators
 import json
 import csv
-os.remove("hy.csv")
-building_name = "B5.json"
-calls_name = "calls_d.csv"
-output = "hy.csv"
+
+print("Building name:", sys.argv[1])
+building_name = sys.argv[1]
+print("Calls name:", sys.argv[2])
+calls_name = sys.argv[2]
+print("Output name:", sys.argv[3])
+output = sys.argv[3]
 # receive 3 inputs:
 # building_name = input()
 # calls_name = input()
@@ -21,8 +25,8 @@ with open(building_name) as f:
 
 # A function that will assign to the call the  elevator whose time to perform that call is the fastest.
 def allocate(b: Building, src: int, des: int):
-
-    the_best_time = b.elevator_arr[0].time(src, des) + b.elevator_arr[0].Time+ b.elevator_arr[0].time(b.elevator_arr[0].destination, src)
+    the_best_time = b.elevator_arr[0].time(src, des) + b.elevator_arr[0].Time + b.elevator_arr[0].time(
+        b.elevator_arr[0].destination, src)
     ans = b.elevator_arr[0]
     index = 0
     correct_index = 0
@@ -34,7 +38,7 @@ def allocate(b: Building, src: int, des: int):
             ans = i
             the_best_time = comparison_time + i.Time + i.time(i.destination, src)
         index = index + 1
-    ans.Time = ans.Time + ans.time(src,des)+ ans.time(ans.destination, src)
+    ans.Time = ans.Time + ans.time(src, des) + ans.time(ans.destination, src)
     ans.destination = des
 
     return correct_index
