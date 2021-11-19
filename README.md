@@ -26,6 +26,7 @@ We added a field and function of times and checked for each call which elevator 
 We did this using a loop that goes through elevator_arr and check the time.
 
 
+![‏‏צילום מסך (123)](https://user-images.githubusercontent.com/93595654/142518133-c1d8db7e-2a49-4d42-a99e-8930527c5091.png)
 
 
 
